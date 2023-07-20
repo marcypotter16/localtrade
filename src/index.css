@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Comfortaa', cursive;
+}
+
+body {
+    background-color: rgba(3, 9, 23, 0.91);
+    color: #abf4f8;
+}
+
+@layer components {
+    .inputField {
+        @apply border border-gray-400 shadow bg-inherit text-white block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500;
+    }
+}
