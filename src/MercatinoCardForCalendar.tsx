@@ -1,15 +1,19 @@
-import {Mercatino, ProduttoreSemplice} from "@/Models/Mercatino";
-import Link from "next/link";
-import {getProduttoriIscritti} from "@/FirebaseUtils/CRUDmercatini";
+import {Mercatino} from "./Models/Mercatino";
+import {Link} from "react-router-dom";
+import {getProduttoriIscritti} from "./FirebaseUtils/CRUDmercatini";
+import {useState} from "react";
 
-export async function MercatinoCardForCalendar({mercatino}: { mercatino: Mercatino }) {
-    const produttoriIscritti: ProduttoreSemplice[] = await getProduttoriIscritti(mercatino.id) as ProduttoreSemplice[];
+export function MercatinoCardForCalendar({mercatino}: { mercatino: Mercatino }) {
+    const [produttoriIscritti, setProduttoriIscritti] = useState(mercatino.ProduttoriIscritti)
+    getProduttoriIscritti(mercatino.id).then((produttori) => {
+        setProduttoriIscritti(produttori)
+    });
     return (
         // Container
         <div
             className='flex group border border-white w-44 h-36 mb-4 bg-transparent justify-center items-center rounded-3xl shadow-2xl shadow-zinc-950 hover:border-teal-400 transition ease-out duration-400'>
             <Link
-                href={`/mercatini/${mercatino.id}`}
+                to={`/mercatini/${mercatino.id}`}
                 className={"flex-1"}
             >
                 {/* <div className='rounded-3xl bg-gray-800 text-center basis-1/2'>

@@ -1,22 +1,21 @@
-import {Mercatino} from "@/Models/Mercatino";
-import {MercatinoCardForCalendar} from "@/app/mercatini/MercatinoCardForCalendar";
-import {getNextMonth, getPreviousMonth} from "@/app/Utils/DateUtil";
-import Link from "next/link";
+import {Mercatino} from "./Models/Mercatino";
+import {MercatinoCardForCalendar} from "./MercatinoCardForCalendar";
+import {getNextMonth, getPreviousMonth, numberToMonth} from "./Utils/DateUtil";
+import {Link} from "react-router-dom";
 
 const mese = Date.now().toString().slice(0, 6)
 const giorni = new Date(parseInt(mese.slice(0, 4)), parseInt(mese.slice(4, 6)), 0).getDate()
-// @ts-ignore
 
 
-export const Calendar = ({mercatini, mese}: { mercatini: Mercatino[], mese: string }) => {
+export const Calendar = ({mercatini} : { mercatini: Mercatino[] }) => {
 
 
     return (
         <>
             <div className='flex space-x-3'>
-                <Link href={'/mercatini/calendario/' + getPreviousMonth(mese)}>&larr;</Link>
-                <h1>{mese}</h1>
-                <Link href={'/mercatini/calendario/' + getNextMonth(mese)}>&rarr;</Link>
+                &larr;
+                <h1>{numberToMonth[(new Date().getMonth() + 1).toString()]}</h1>
+                &rarr;
             </div>
             <div className='grid grid-cols-7'>
                 {Array(giorni).fill(0).map((_, i) => {

@@ -1,6 +1,6 @@
 import {collection, deleteDoc, doc, getDocs, orderBy, setDoc, query, getDoc, addDoc} from "firebase/firestore/lite";
 import {db} from "./firebase.ts";
-import {Mercatino, mercatinoConverter} from "../Models/Mercatino";
+import {Mercatino, mercatinoConverter, ProduttoreSemplice} from "../Models/Mercatino";
 
 export const insertMercatino = async (mercatino: Mercatino) => {
     const mercatiniCollection = collection(db, "mercatini").withConverter(mercatinoConverter);
@@ -21,7 +21,7 @@ export const deleteMercatino = async (id: string) => {
 export const getProduttoriIscritti = async (id: string) => {
     const mercatiniCollection = collection(db, "mercatini").withConverter(mercatinoConverter);
     const mercatinoDoc = await getDoc(doc(mercatiniCollection, id));
-    return mercatinoDoc.data()?.ProduttoriIscritti;
+    return mercatinoDoc.data()?.ProduttoriIscritti as ProduttoreSemplice[];
 }
 
 export const getMercatiniByDate = async (): Promise<Mercatino[]> => {
