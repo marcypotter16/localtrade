@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
-import PublishMercatini from "./PubblicaMercatino.tsx";
-import CalendarByMonth from "./Calendario.tsx";
+import PublishMercatini from "./Pages/PubblicaMercatino.tsx";
+import CalendarByMonth from "./Pages/Calendario/Calendario.tsx";
 
 export const RoutesComponent = () => {
 	return (

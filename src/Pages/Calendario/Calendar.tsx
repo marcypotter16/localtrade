@@ -1,6 +1,6 @@
-import {Mercatino} from "./Models/Mercatino";
-import {MercatinoCardForCalendar} from "./MercatinoCardForCalendar";
-import {getNextMonth, getPreviousMonth, numberToMonth} from "./Utils/DateUtil";
+import {Mercatino} from "../../Models/Mercatino.ts";
+import {MercatinoCardForCalendar} from "../../MercatinoCardForCalendar.tsx";
+import {getNextMonth, getPreviousMonth, numberToMonth} from "../../Utils/DateUtil.ts";
 import {Link} from "react-router-dom";
 
 const mese = Date.now().toString().slice(0, 6)

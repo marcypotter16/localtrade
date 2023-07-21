@@ -1,8 +1,8 @@
 import {ChangeEvent, FormEvent, useRef, useState} from "react";
 import {v4} from "uuid";
-import {Mercatino, mercatinoConverter} from "./Models/Mercatino";
+import {Mercatino, mercatinoConverter} from "../Models/Mercatino.ts";
 import {ref, uploadBytes} from "@firebase/storage";
-import {db, storage} from "./FirebaseUtils/firebase";
+import {db, storage} from "../FirebaseUtils/firebase.ts";
 import {doc, increment, setDoc, updateDoc} from "@firebase/firestore/lite";
 import {CheckCircleIcon, XCircleIcon} from "@heroicons/react/24/outline";
 
