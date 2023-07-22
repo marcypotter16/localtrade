@@ -29,3 +29,11 @@ export const getMercatiniByDate = async (): Promise<Mercatino[]> => {
     const mercatiniSnapshot = await getDocs(mercatiniCollection);
     return mercatiniSnapshot.docs.map(doc => doc.data() as Mercatino);
 }
+
+export const getMercatiniByDateQuery = () => {
+    return query(collection(db, "mercatini"), orderBy('dataTimestamp', 'asc')).withConverter(mercatinoConverter);
+}
+
+export const getMercatinoByIdQuery = (id: string) => {
+    return doc(collection(db, "mercatini"), id).withConverter(mercatinoConverter);
+}

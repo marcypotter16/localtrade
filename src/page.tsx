@@ -1,6 +1,6 @@
-// import {getMercatini} from "@/FirebaseUtils/CRUDmercatini";
+// import {getMercatini} from "@/DbUtils/CRUDmercatini";
 import {Mercatino} from "@/Models/Mercatino";
-import {getMercatiniByDate} from "@/FirebaseUtils/CRUDmercatini";
+import {getMercatiniByDate} from "@/DbUtils/CRUDmercatini";
 import {MercatinoCardForCalendar} from "@/app/mercatini/MercatinoCardForCalendar";
 import {Calendar} from "@/app/mercatini/Calendar";
 

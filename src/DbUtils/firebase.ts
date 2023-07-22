@@ -7,17 +7,17 @@ import {getStorage} from "@firebase/storage";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCftGmZ7sWCwaQs61pmFW05Q34sXDvOZT4",
-  authDomain: "loket-127b7.firebaseapp.com",
-  projectId: "loket-127b7",
-  storageBucket: "loket-127b7.appspot.com",
-  messagingSenderId: "412488421997",
-  appId: "1:412488421997:web:0cb7cac2c5ef369c2da564",
-  measurementId: "G-9FWZYJZDBE"
+  apiKey: "AIzaSyA79H7Az1jLOsSG_MVVNaaoU7CI5oK6dME",
+  authDomain: "localket.firebaseapp.com",
+  projectId: "localket",
+  storageBucket: "localket.appspot.com",
+  messagingSenderId: "923784017759",
+  appId: "1:923784017759:web:c5eaefb425747d3b3de8ea",
+  measurementId: "G-621DX08RL8"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-// const analytics = getAnalytics(app);
+export const analytics = getAnalytics(app);

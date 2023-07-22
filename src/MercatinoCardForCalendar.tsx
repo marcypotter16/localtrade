@@ -1,6 +1,6 @@
 import {Mercatino} from "./Models/Mercatino";
 import {Link} from "react-router-dom";
-import {getProduttoriIscritti} from "./FirebaseUtils/CRUDmercatini";
+import {getProduttoriIscritti} from "./DbUtils/CRUDmercatini";
 import {useState} from "react";
 
 export function MercatinoCardForCalendar({mercatino}: { mercatino: Mercatino }) {
